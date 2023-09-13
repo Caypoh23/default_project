@@ -1,15 +1,14 @@
-plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
     }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -21,6 +20,16 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 33
@@ -48,19 +57,19 @@ android {
     }
 
 
-    /*signingConfigs {;
-       release {;
+    signingConfigs {
+       release {
            keyAlias keystoreProperties['keyAlias'];
            keyPassword keystoreProperties['keyPassword'];
            storeFile file(keystoreProperties['storeFile']);
            storePassword keystoreProperties['storePassword'];
-       };
-    };
-    buildTypes {;
-        release {;
+       }
+    }
+    buildTypes {
+        release {
             signingConfig signingConfigs.release;
-        };
-    };*/
+        }
+    }
 }
 
 flutter {
