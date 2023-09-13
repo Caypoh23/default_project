@@ -13,14 +13,8 @@ class MySPHelper {
   }
 
   /// Theme
-  static bool get isLight => _prefs.getBool(MySPKeys.isDark) ?? true;
-  static set isLight(bool value) => _setData(MySPKeys.isDark, value);
-
-  /// Permissions
-  static bool get locationPermissionRequested =>
-      _prefs.getBool(MySPKeys.hasLocationPermission) ?? false;
-  static set locationPermissionRequested(bool? value) =>
-      _setData(MySPKeys.hasLocationPermission, value);
+  static bool get isLight => _prefs.getBool(MySPKeys.isLight) ?? true;
+  static set isLight(bool value) => _setData(MySPKeys.isLight, value);
 
   ///
   static Future<bool> clear() => _prefs.clear();

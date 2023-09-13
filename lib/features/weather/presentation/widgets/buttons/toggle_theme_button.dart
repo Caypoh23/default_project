@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
-import 'package:default_project/config/theme/theme.dart';
 import 'package:default_project/features/weather/presentation/cubits/theme_switcher/theme_switcher_cubit.dart';
 
 class WeatherToggleThemeButton extends StatelessWidget {
@@ -20,9 +19,10 @@ class WeatherToggleThemeButton extends StatelessWidget {
         return FloatingActionButton(
           tooltip: 'Toggle',
           onPressed: cubit.toggleTheme,
+          backgroundColor: Theme.of(context).primaryColorLight,
           child: Icon(
             Icons.palette,
-            color: MyTheme.lightTheme.primaryColor,
+            color: Theme.of(context).canvasColor,
           ),
         );
       },

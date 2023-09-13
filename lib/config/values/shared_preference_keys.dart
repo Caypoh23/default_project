@@ -1,5 +1,4 @@
 class MySPKeys {
   //
-  static const String isDark = 'isDark';
-  static const String hasLocationPermission = 'hasLocationPermission';
+  static const String isLight = 'isLight';
 }

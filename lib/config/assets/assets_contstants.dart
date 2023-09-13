@@ -7,11 +7,4 @@ class MyAssets {
   static const icons = '$assets/icons';
 
   static const iconsCommon = '$icons/common';
-
-  // Images
-  static const img = '$assets/images';
-  static const onboarding = '$img/onboarding';
-
-  // Translations
-  static const translations = '$assets/translations/translations.csv';
 }

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
-import 'package:default_project/config/theme/theme.dart';
 import 'package:default_project/features/weather/presentation/bloc/weather_bloc.dart';
 
 class WeatherFetchWeatherButton extends StatelessWidget {
@@ -13,16 +12,17 @@ class WeatherFetchWeatherButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<WeatherBloc>().add(const FetchWeather());
-
     return BlocBuilder<WeatherBloc, WeatherState>(
       builder: (context, state) {
         return FloatingActionButton(
           tooltip: 'Weather',
-          onPressed: () => bloc,
+          backgroundColor: Theme.of(context).primaryColorLight,
+          onPressed: () {
+            context.read<WeatherBloc>().add(const FetchWeather());
+          },
           child: Icon(
             Icons.cloud,
-            color: MyTheme.lightTheme.primaryColor,
+            color: Theme.of(context).canvasColor,
           ),
         );
       },

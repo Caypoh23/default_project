@@ -1,6 +1,7 @@
-// Package imports:
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -25,13 +26,19 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     WeatherEvent event,
     Emitter<WeatherState> emit,
   ) async {
-    emit(const WeatherLoading());
-    final location = await MyLocationHelper.getLocation();
-    final result = await sl<WeatherUsecase>().fetchWeather(location);
+    try {
+      if (state is! WeatherLoading) {
+        emit(const WeatherLoading());
+        final location = await MyLocationHelper.getLocation();
+        final result = await sl<WeatherUsecase>().fetchWeather(location);
 
-    result.fold(
-      (failure) => emit(WeatherState.error(failure.message)),
-      (weather) => emit(WeatherState.loaded(weather)),
-    );
+        result.fold(
+          (failure) => emit(WeatherState.error(failure.message)),
+          (weather) => emit(WeatherState.loaded(weather)),
+        );
+      }
+    } catch (e) {
+      emit(WeatherState.error(e.toString()));
+    }
   }
 }

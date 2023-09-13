@@ -91,9 +91,9 @@ class MyTheme {
     iconTheme: _lightIconTheme,
     bottomNavigationBarTheme: _lightBottomNavigationBarThemeData,
     colorScheme: const ColorScheme.light(
-      primary: MyColors.white,
-      onPrimary: MyColors.white,
-      secondary: MyColors.white,
+      primary: MyColors.primary,
+      onPrimary: MyColors.primaryA50,
+      secondary: MyColors.secondary,
       onSecondary: MyColors.secondaryA50,
       tertiary: MyColors.tertiary,
       onTertiary: MyColors.tertiaryA50,
@@ -114,8 +114,8 @@ class MyTheme {
     iconTheme: _darkIconTheme,
     bottomNavigationBarTheme: _darkBottomNavigationBarThemeData,
     colorScheme: const ColorScheme.dark(
-      primary: MyColors.black,
-      onPrimary: MyColors.black,
+      primary: MyColors.primary,
+      onPrimary: MyColors.primaryA50,
       secondary: MyColors.secondary,
       onSecondary: MyColors.secondaryA50,
       tertiary: MyColors.tertiary,

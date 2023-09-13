@@ -26,8 +26,8 @@ class CounterCubit extends Cubit<CounterState> {
   void decrement() {
     final isLight = sl<ThemeSwitcherCubit>().state.isLight;
     final value = isLight
-        ? (state.value > 1 ? state.value - 2 : (state.value > 0 ? 9 : 8))
-        : (state.value > 1 ? state.value - 1 : 10);
+        ? (state.value > 0 ? state.value - 2 : (state.value > 0 ? 9 : 8))
+        : (state.value > 0 ? state.value - 1 : 10);
     emit(state.copyWith(value: value));
   }
 }

@@ -39,8 +39,8 @@ class _WeatherPageState extends State<WeatherPage> {
             appBar: MyAppBar(
               canPop: false,
               title: 'Weather Counter',
-              backgroundColor: state.isLight ? MyColors.black : MyColors.white,
               textColor: state.isLight ? MyColors.white : MyColors.black,
+              backgroundColor: state.isLight ? MyColors.black : MyColors.white,
             ),
           );
         },

@@ -17,7 +17,7 @@
     </queries>
 
     <application
-        android:label="Default Project"
+        android:label="Weather Counter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

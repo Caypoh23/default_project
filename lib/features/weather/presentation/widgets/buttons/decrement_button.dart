@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
-import 'package:default_project/config/theme/theme.dart';
 import 'package:default_project/features/weather/presentation/cubits/counter/counter_cubit.dart';
 
 class WeatherDecrementButton extends StatelessWidget {
@@ -20,9 +19,10 @@ class WeatherDecrementButton extends StatelessWidget {
         return FloatingActionButton(
           tooltip: 'Decrement',
           onPressed: cubit.decrement,
+          backgroundColor: Theme.of(context).primaryColorLight,
           child: Icon(
             Icons.remove,
-            color: MyTheme.lightTheme.primaryColor,
+            color: Theme.of(context).canvasColor,
           ),
         );
       },

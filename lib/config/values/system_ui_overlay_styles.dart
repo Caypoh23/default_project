@@ -5,32 +5,16 @@ import 'package:flutter/services.dart';
 import 'colors.dart';
 
 class MySystemUiOverlayStyle {
+  //
   MySystemUiOverlayStyle._();
 
-  static const splash = SystemUiOverlayStyle(
-    systemStatusBarContrastEnforced: false,
-    statusBarColor: MyColors.transparent,
-    statusBarBrightness: Brightness.dark,
-    statusBarIconBrightness: Brightness.light,
-    //
-    systemNavigationBarContrastEnforced: false,
-    systemNavigationBarColor: MyColors.secondary,
-    systemNavigationBarDividerColor: MyColors.secondary,
-    systemNavigationBarIconBrightness: Brightness.light,
-  );
-
-  static const darkStatusBar = SystemUiOverlayStyle(
-    systemStatusBarContrastEnforced: false,
-    statusBarColor: MyColors.transparent,
-    statusBarBrightness: Brightness.dark,
-    statusBarIconBrightness: Brightness.light,
-  );
-
   static const lightNavBar = SystemUiOverlayStyle(
-    systemNavigationBarContrastEnforced: false,
+    statusBarColor: MyColors.white,
+    statusBarBrightness: Brightness.light,
     systemNavigationBarColor: MyColors.white,
-    systemNavigationBarDividerColor: MyColors.white,
+    systemNavigationBarContrastEnforced: false,
     systemNavigationBarIconBrightness: Brightness.dark,
+    systemNavigationBarDividerColor: MyColors.transparent,
   );
 
   static const main = SystemUiOverlayStyle(
@@ -42,13 +26,5 @@ class MySystemUiOverlayStyle {
     systemNavigationBarColor: MyColors.black,
     systemNavigationBarIconBrightness: Brightness.light,
     systemNavigationBarDividerColor: MyColors.transparent,
-  );
-
-  static const greyNavBar = SystemUiOverlayStyle(
-    //
-    systemNavigationBarContrastEnforced: false,
-    systemNavigationBarColor: MyColors.neutralVariant1,
-    systemNavigationBarDividerColor: MyColors.neutralVariant1,
-    systemNavigationBarIconBrightness: Brightness.dark,
   );
 }
