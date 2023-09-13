@@ -2,6 +2,7 @@ name: default_project
 description: A new Flutter project.
 
 publish_to: 'none'
+#* Flutter 3.13.1
 
 version: 1.0.0+1
 
@@ -14,12 +15,71 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
+  geolocator: ^10.0.1
+  flutter_svg: ^2.0.7
+  connectivity_plus: ^4.0.2
+  google_maps_flutter: ^2.5.0
+  permission_handler: ^11.0.0
+  shared_preferences: ^2.0.15
+  flutter_bloc: ^8.1.3
+  connectivity: ^3.0.6
+  equatable: ^2.0.5
+  logging: ^1.2.0
+  shimmer: ^3.0.0
+  http: ^1.1.0
+
+  get_it: ^7.6.0
+  injectable: ^2.1.2
+  injectable_generator: ^2.1.3
+
+  #* Api Client
+  chopper: ^7.0.6
+  chopper_generator: ^7.0.1
+
+  dartz: ^0.10.1
+  rxdart: ^0.27.7
+
+  #* Freezed
+  freezed: ^2.4.1
+  freezed_result: ^1.0.3+1
+  freezed_annotation: ^2.4.1
+  freezed_collection: ^0.0.3
+
+  #* Json
+  json_serializable: ^6.7.1
+  json_annotation: ^4.8.1
+
+  #* Router
+  auto_route: ^7.7.1
+  auto_route_generator: ^7.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  import_sorter: ^4.6.0
+  build_runner: ^2.4.6
 
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/
+
+    - assets/icons/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Nunito-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-Black.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 900
